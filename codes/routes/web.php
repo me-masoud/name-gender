@@ -17,8 +17,14 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->get('/name/{name}' , ['as'=> 'getName' , 'uses' => 'SexController@getName']);
 
-//add name
-$router->get('/add' , ['as'=>'addNameView' , 'uses'=>'SexController@addNameView']);
-$router->post('/add' , ['as'=>'addName' , 'uses' => 'SexController@addName']);
+//get names of niko site
+
+$router->get('/getniko', ['as' => 'getNiko' , 'uses' => 'NameController@getNamesListOfNamesFromNiko']);
+
+//add new name
+
+$router->post('/insertname' , ['as' => 'insertName' , 'uses' => 'NameController@insertName']);
+
+//get a name details
+$router->get('/api/getnamedetails/{name}/{lang}',  ['as'=>'getNameDetails' , 'uses'=>'NameController@getANameDetails']);
