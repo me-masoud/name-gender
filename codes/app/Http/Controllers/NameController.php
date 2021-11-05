@@ -95,8 +95,9 @@ class NameController extends Controller
 
     public function getANameDetails($name , $lang)
     {
-        $name = Name::where($lang == 'en' ? 'en_name' : 'name' , $name)->where('confirm' , 1)->first();
-        return $name;
+        $name = urldecode($name);
+        $attribute = $lang == 'en' ? 'en_name' : 'name';
+        return Name::where($attribute ,  $name)->first();
     }
 
     public function insertName(Request $request)

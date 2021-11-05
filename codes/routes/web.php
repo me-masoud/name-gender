@@ -27,4 +27,4 @@ $router->get('/getniko', ['as' => 'getNiko' , 'uses' => 'NameController@getNames
 $router->post('/insertname' , ['as' => 'insertName' , 'uses' => 'NameController@insertName']);
 
 //get a name details
-$router->get('/api/getnamedetails/{name}/{lang}',  ['as'=>'getNameDetails' , 'uses'=>'NameController@getANameDetails']);
+$router->get('/api/get-name-detail/{name}/{lang}',  ['as'=>'getNameDetails' , 'uses'=>'NameController@getANameDetails']);
