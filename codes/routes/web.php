@@ -14,7 +14,7 @@
 */
 
 $router->get('/', function () use ($router) {
-    return $router->app->version();
+    return 'hello this is home page of name project by masoud';
 });
 
 

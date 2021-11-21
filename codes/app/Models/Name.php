@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use App\Models\Traits\NameRelationsTrait;
 use Illuminate\Database\Eloquent\Model;
 
 class Name extends Model
 {
+    use NameRelationsTrait;
+
     protected $fillable = [
         'name' ,
         'persian_pronounce',
@@ -19,4 +22,5 @@ class Name extends Model
         'confirm'
     ];
     protected $table = 'names';
+
 }
